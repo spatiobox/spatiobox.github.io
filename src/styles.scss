@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+            /* You can add global styles to this file, and also import other style files */
+
+            @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+            @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+            .jumbotron {
+                padding-top: 0px;
+                padding-bottom: 0px;
+                margin-bottom: 0px;
+                color: inherit;
+                background-color: #eeeeee;
+                max-height: 300px;
+                overflow: hidden;
+            }
+
+            #xi-nav {
+                background: transparent;
+                border: none;
+                .navbar-nav {
+                    &>.active {
+                        &>a,
+                        &>a:hover {
+                            color: #e7e7e7;
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
