@@ -19,7 +19,7 @@ export class LoginComponent {
     login() {
         this.message = 'Trying to log in ...';
 
-        this.$auth.login().subscribe(() => {
+        this.$auth.post({}).subscribe(() => {
             this.setMessage();
             if (this.$auth.isLoggedIn) {
                 // Get the redirect URL from our auth service

@@ -1,6 +1,7 @@
 /**
  * Created by zero on 7/19/16.
  */
+import { Http, Headers, Request, RequestMethod, RequestOptions, URLSearchParams } from '@angular/http';
 
 declare var localStorage: any;
 
@@ -33,6 +34,14 @@ export const XI = {
             result += spliter + (XI.Region[XI.lang][item] || XI.Messages[XI.lang][item] || item || '');
         });
         return result;
+    },
+    getToken() {
+        var lang = localStorage.getItem('language');
+        var token = sessionStorage.getItem('id_token');
+        var headers = new Headers();
+        if (token) headers.append('Authorization', 'Bearer ' + token);
+        headers.append('Accept-Language', lang ? lang : 'zh-CN');
+        return headers;
     },
     Category: {
         formula: 1,
