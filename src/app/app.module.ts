@@ -18,6 +18,7 @@ import { NavigationComponent } from "app/navigation/navigation.component";
 import { ProfileService } from "app/_services/profile.service";
 import { HeaderComponent } from "app/navigation/header.component";
 import { PageNotFoundComponent } from "app/page-not-found.component";
+import { AppPreloadingStrategyService } from "app/_services/app-preloading-strategy.service";
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { PageNotFoundComponent } from "app/page-not-found.component";
   providers: [
     AuthGuard,
     AuthService,
-    ProfileService
+    ProfileService,
+    AppPreloadingStrategyService
   ],
   bootstrap: [AppComponent],
   exports: [NavigationComponent, PageNotFoundComponent]
