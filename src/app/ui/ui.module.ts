@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { UIComponent } from './ui.component';
 import { UIRoutingModule } from './ui-routing.module';
+import { CommonModule } from "@angular/common";
 
 
 @NgModule({
@@ -9,6 +10,7 @@ import { UIRoutingModule } from './ui-routing.module';
     UIComponent
   ],
   imports: [
+    CommonModule,
     UIRoutingModule
   ],
   providers: []

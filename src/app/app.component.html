@@ -5,12 +5,8 @@
     </app-nav>
   </div>
 </div>
-
-<div class="panel">
-  <div class="panel-title">
-
-  </div>
-  <div class="panel-body">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+<router-outlet>
+  <!--<router-outlet name="header" (activate)='onActivate($event)' (deactivate)='onDeactivate($event)'></router-outlet>
+  <router-outlet name="nav" (activate)='onActivate($event)' (deactivate)='onDeactivate($event)'></router-outlet>
+  <router-outlet name="box" (activate)='onActivate($event)' (deactivate)='onDeactivate($event)'></router-outlet>-->
+</router-outlet>

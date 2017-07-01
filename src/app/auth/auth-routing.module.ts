@@ -1,0 +1,28 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from "app/auth/login/login.component";
+import { AuthService } from "app/_services/auth.service";
+
+const AuthRoutes: Routes = [
+    { path: 'login', component: LoginComponent }
+];
+
+@NgModule({
+    imports: [
+        RouterModule.forChild(AuthRoutes)
+    ],
+    exports: [
+        RouterModule
+    ],
+    providers: [
+        AuthService
+    ]
+})
+export class AuthRoutingModule { }
+
+
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/

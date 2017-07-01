@@ -1,27 +1,35 @@
-            /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
 
-            @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
-            @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-            .jumbotron {
-                padding-top: 0px;
-                padding-bottom: 0px;
-                margin-bottom: 0px;
-                color: inherit;
-                background-color: #eeeeee;
-                max-height: 300px;
-                overflow: hidden;
-            }
+.jumbotron {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    color: #e7e7e7;
+    background-color: #eeeeee;
+    max-height: 300px;
+    overflow: hidden;
+}
 
-            #xi-nav {
-                background: transparent;
-                border: none;
-                .navbar-nav {
-                    &>.active {
-                        &>a,
-                        &>a:hover {
-                            color: #e7e7e7;
-                            background-color: transparent;
-                        }
-                    }
+#xi-nav {
+    background: transparent; // border: none;
+    ul.navbar-nav {
+        &>li {
+            &>a {
+                font-size: 18px;
+                color: #fff;
+                cursor: pointer;
+                background-color: transparent;
+                border: solid 3px transparent;
+                border-width: 3px 0px;
+                &:hover {
+                    border-bottom-color: rgba(#efbca0, 0.5); // color: lighten(#efbca0, 5%);
                 }
             }
+            &.active {
+                &>a {
+                    border-bottom-color: #efbca0; // color: #efbca0;
+                }
+            }
+        }
+    }
+}
