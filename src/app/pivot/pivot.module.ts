@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { PivotRoutingModule } from "app/pivot/pivot-routing.module";
-import { ArticleModule } from "app/pivot/article/article.module";
+
+
 import { PivotComponent } from "app/pivot/pivot.component";
 import { AuthGuard } from "app/_services/auth-guard.service";
 import { AuthService } from "app/_services/auth.service";
@@ -10,6 +11,7 @@ import { ShareModule } from "app/share.module";
 import { I18nPipe } from "app/_pipes/i18n.pipe";
 import { UserModule } from "app/pivot/user/user.module";
 import { NavComponent } from './nav/nav.component';
+import { ArticleModule } from "app/pivot/article/_.module";
 
 
 @NgModule({

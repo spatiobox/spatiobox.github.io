@@ -1,9 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    templateUrl: './article.component.html'
+    templateUrl: './article.html'
 })
 
-export class ArticleComponent {
+export class ArticleComponent implements OnInit {
     title = 'article';
+    constructor() {
+        console.log('list');
+    }
+
+    ngOnInit() {
+
+    }
 }

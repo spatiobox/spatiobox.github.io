@@ -1,7 +1,7 @@
 <h4>{{ 'navigation' | i18n }}</h4>
 <ul class="nav">
   <li *ngFor="let node of navs" routerLinkActive="active">
-    <a [routerLink]="node.Url"> {{ node.SystemName | i18n }} </a>
+    <a [routerLink]="node.Url"><i class="{{ node.Icon }}"></i> {{ node.SystemName | i18n }} </a>
     <ul ng-if="node.children && node.children.length">
       <li *ngFor="let subItem of node.children">
         <a>{{subItem.SystemName | i18n }}</a>

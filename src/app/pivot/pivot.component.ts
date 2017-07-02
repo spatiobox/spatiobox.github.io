@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { AuthService } from "app/_services/auth.service";
 import { Router, NavigationExtras } from "@angular/router";
+import { NavigationComponent } from "app/navigation/navigation.component";
 
 @Component({
     templateUrl: './pivot.component.html'
+    // encapsulation: ViewEncapsulation.None
 })
 export class PivotComponent {
     navs = [];

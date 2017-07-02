@@ -12,7 +12,13 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         children: [
             {
-                path: 'article', loadChildren: 'app/pivot/article/article.module#ArticleModule',
+                path: 'article',
+                loadChildren: 'app/pivot/article/_.module#ArticleModule',
+                canLoad: [AuthGuard]
+            },
+            {
+                path: 'user',
+                loadChildren: 'app/pivot/user/user.module#UserModule',
                 canLoad: [AuthGuard]
             }
         ]

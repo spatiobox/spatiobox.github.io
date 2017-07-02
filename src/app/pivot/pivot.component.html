@@ -12,24 +12,13 @@
     <button md-menu-item>Help</button>
     <button md-menu-item (click)="logout()">{{ "logout" | i18n }}</button>
 </md-menu>
-<md-sidenav-container>
-    <md-sidenav align="start" mode="side" opened="true" #sidenav style="height: calc(100vh - 64px); ">
+<md-sidenav-container style="height: calc(100vh - 64px); overflow: hidden;">
+    <md-sidenav align="start" mode="side" opened="true" #sidenav>
         <povit-nav></povit-nav>
     </md-sidenav>
-    <md-grid-list cols="7" style="height: calc(100vh - 64px) ;background: #eecc99">
-        <md-grid-tile *ngFor="let dog of dogs" [rowspan]="dog.rows">
-            <img src="assets/{{dog.name}}.png" alt="photo of {{dog.name}}">
-            <md-grid-tile-footer>
-                <h3 md-line>{{dog.name}}</h3>
-                <span md-line>Human: {{dog.human}}</span>
-                <button md-icon-button (click)="showDog(dog)">
-            <md-icon>info</md-icon>
-          </button>
-            </md-grid-tile-footer>
-        </md-grid-tile>
-        <md-grid-tile>
-            <router-outlet>
-            </router-outlet>
+    <md-grid-list cols="4" style="background: #eecc99; overflow: hidden;">
+        <md-grid-tile rowspan="4" colspan="4">
+            <router-outlet></router-outlet>
         </md-grid-tile>
     </md-grid-list>
 </md-sidenav-container>
