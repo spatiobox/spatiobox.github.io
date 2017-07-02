@@ -2,6 +2,6 @@
     LOGIN</h2>
 <p>{{message}}</p>
 <p>
-    <button (click)="login()" *ngIf="!$auth.isLoggedIn">Login</button>
-    <button (click)="logout()" *ngIf="$auth.isLoggedIn">Logout</button>
+    <button (click)="login()" *ngIf="!$auth.isLoggedIn()">Login</button>
+    <button (click)="logout()" *ngIf="$auth.isLoggedIn()">Logout</button>
 </p>

@@ -1,9 +1,10 @@
 /**
  * Created by zero on 7/19/16.
  */
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { XI } from "app/xi.global";
+import { Observable } from "rxjs/Observable";
 
 //import {CanActivate, RouterStateSnapshot, ActivatedRouteSnapshot} from '@angular/router';
 /**
@@ -13,6 +14,7 @@ import { XI } from "app/xi.global";
  */
 
 declare var $: any;
+declare var sessionStorage: any;
 
 @Injectable()
 export class AuthService {
@@ -55,6 +57,31 @@ export class AuthService {
         var options = { headers: _headers };
         return this.http.post(this.url, str, options);
     }
+    SignIn(node) {
+        // Observable.of(true).delay(1000).do(val => this.isLoggedIn = true);
+        return new Promise((resolve, reject) => {
+            this.post(node).subscribe(res => {
+                let _data = res.json();
+
+                sessionStorage.setItem('id_token', _data.access_token);
+                // sessionStorage.removeItem('profile');
+                // sessionStorage.setItem('profile', JSON.stringify(_profile));
+                resolve(_data);
+            }, err => {
+                if (err.status == 401) sessionStorage.clear();
+                let _error = err.json();
+                console.log('sign err', _error);
+                XI.showMsg(_error.error);
+                reject(_error);
+            });
+        });
+    }
+
+    SignOut() {
+        sessionStorage.removeItem('profile');
+        sessionStorage.removeItem('id_token');
+        sessionStorage.clear();
+    }
 
     put(node: any) {
         var _url = this.url + '/{id}'.replace('{id}', node.ID);
@@ -84,9 +111,6 @@ export class AuthService {
     export() {
 
     }
-
-    login() { }
-    logout() { }
 
     getToken() {
         //var token = sessionStorage.getItem('id_token');

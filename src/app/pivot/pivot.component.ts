@@ -1,9 +1,33 @@
 import { Component } from '@angular/core';
+import { AuthService } from "app/_services/auth.service";
+import { Router, NavigationExtras } from "@angular/router";
 
 @Component({
     templateUrl: './pivot.component.html'
 })
 export class PivotComponent {
+    navs = [];
+    constructor(private $auth: AuthService, private $router: Router) {
+
+
+    }
+
+    logout() {
+        this.$auth.SignOut();
+
+        // let redirect = this.$auth.redirectUrl ? this.$auth.redirectUrl : '/login';
+        let redirect = '/login';
+
+        // Set our navigation extras object
+        // that passes on our global query params and fragment
+        let navigationExtras: NavigationExtras = {
+            queryParamsHandling: 'preserve',
+            preserveFragment: true
+        };
+
+        // Redirect the user
+        this.$router.navigate([redirect], navigationExtras);
+    }
 }
 
 

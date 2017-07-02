@@ -6,4 +6,11 @@ import { Component } from '@angular/core';
 
 export class HomeComponent {
     title = 'home';
+    onActivate($event) {
+
+    }
+    onDeactivate($event) {
+
+    }
 }
+

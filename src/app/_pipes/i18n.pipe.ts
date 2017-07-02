@@ -4,17 +4,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { XI } from "app/xi.global";
 
-/*
- * Raise the value exponentially
- * Takes an exponent argument that defaults to 1.
- * Usage:
- *   value | exponentialStrength:exponent
- * Example:
- *   {{ 2 |  exponentialStrength:10}}
- *   formats to: 1024
- */
 @Pipe({ name: 'i18n' })
-export class TranslatePipe implements PipeTransform {
+export class I18nPipe implements PipeTransform {
     constructor() {
     }
     transform(value: any, args: any): string {

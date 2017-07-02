@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MaterialModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,9 @@ import { ProfileService } from "app/_services/profile.service";
 import { HeaderComponent } from "app/navigation/header.component";
 import { PageNotFoundComponent } from "app/page-not-found.component";
 import { AppPreloadingStrategyService } from "app/_services/app-preloading-strategy.service";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ShareModule } from "app/share.module";
+
 
 @NgModule({
   declarations: [
@@ -28,9 +32,12 @@ import { AppPreloadingStrategyService } from "app/_services/app-preloading-strat
     PageNotFoundComponent
   ],
   imports: [
-    CommonModule,
     BrowserModule,
+    CommonModule,
     // BrowserAnimationsModule,
+    ShareModule,
+    BrowserAnimationsModule,
+    MaterialModule,
 
     HttpModule,
     FormsModule,

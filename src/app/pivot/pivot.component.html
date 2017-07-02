@@ -1,8 +1,35 @@
-<h3>
-    ~~~~pivot</h3>
-<nav>
-    <a routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
-    <a routerLink="./crises" routerLinkActive="active">Manage Crises</a>
-    <a routerLink="./article" routerLinkActive="active">Article Management</a>
-</nav>
-<router-outlet></router-outlet>
+<md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.toggle()">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+</md-toolbar>
+<md-menu x-position="before" #menu="mdMenu">
+    <button md-menu-item (click)="sidenav.toggle()">Settings</button>
+    <button md-menu-item (click)="isDarkTheme=!isDarkTheme">Toggle theme</button>
+    <button md-menu-item>Help</button>
+    <button md-menu-item (click)="logout()">{{ "logout" | i18n }}</button>
+</md-menu>
+<md-sidenav-container>
+    <md-sidenav align="start" mode="side" opened="true" #sidenav style="height: calc(100vh - 64px); ">
+        <povit-nav></povit-nav>
+    </md-sidenav>
+    <md-grid-list cols="7" style="height: calc(100vh - 64px) ;background: #eecc99">
+        <md-grid-tile *ngFor="let dog of dogs" [rowspan]="dog.rows">
+            <img src="assets/{{dog.name}}.png" alt="photo of {{dog.name}}">
+            <md-grid-tile-footer>
+                <h3 md-line>{{dog.name}}</h3>
+                <span md-line>Human: {{dog.human}}</span>
+                <button md-icon-button (click)="showDog(dog)">
+            <md-icon>info</md-icon>
+          </button>
+            </md-grid-tile-footer>
+        </md-grid-tile>
+        <md-grid-tile>
+            <router-outlet>
+            </router-outlet>
+        </md-grid-tile>
+    </md-grid-list>
+</md-sidenav-container>
