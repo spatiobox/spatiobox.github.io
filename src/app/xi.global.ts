@@ -208,7 +208,7 @@ export const XI = {
     Region: {
         "zh-CN": {
             //系统
-            "omniteaching": "来学通",
+            "xi": "Xmeta",
             "profile": "个人信息",
             "info": "信息",
             "settings": "配置",
@@ -351,7 +351,7 @@ export const XI = {
         },
         "zh-TW": {
             //系统
-            "omniteaching": "來學通",
+            "xi": "Xmeta",
             "profile": "個人信息",
             "info": "信息",
             "settings": "配置",
@@ -496,7 +496,7 @@ export const XI = {
             'no_mission_available': '當前無分配任務'
         },
         "en-US": {
-            "omniteaching": "Omniteaching",
+            "xi": "Xmeta",
             "profile": "User Profile",
             "info": "Info.",
             "settings": "Settings",
