@@ -3,19 +3,19 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { CommonModule } from "@angular/common";
-import { InfoComponent } from './info/info.component';
 import { NavComponent } from './nav/nav.component';
+import { InfosModule } from "app/home/infos/_.module";
 
 
 @NgModule({
     declarations: [
         HomeComponent,
-        InfoComponent,
         NavComponent
     ],
     imports: [
         CommonModule,
-        HomeRoutingModule
+        HomeRoutingModule,
+        InfosModule
     ],
     providers: [
     ],

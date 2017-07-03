@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from "app/home/home.component";
-import { InfoComponent } from "app/home/info/info.component";
 import { NavComponent } from "app/home/nav/nav.component";
 
 const routes: Routes = [
@@ -9,7 +8,7 @@ const routes: Routes = [
         path: '',
         component: HomeComponent,
         children: [
-            { path: 'info', component: InfoComponent }
+            { path: 'infos', loadChildren: 'app/home/infos/_.module#InfosModule' }
         ]
     }
 ];
