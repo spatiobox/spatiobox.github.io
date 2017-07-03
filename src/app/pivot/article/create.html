@@ -1,1 +1,279 @@
-createcreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreatecreate
+<div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="/System">{{ "dashboard" | i18n }}</a>
+        </li>
+        <li>
+            <a href="/InfoMgr">@ViewBag.Title</a>
+        </li>
+    </ul>
+</div>
+
+
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header " data-original-title="">
+                <h2><i class="glyphicon glyphicon-info-sign"></i>@ViewBag.Title</h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-setting btn-round btn-default"><i class="glyphicon glyphicon-cog"></i></a>
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <!-- put your content here -->
+                <form (submit)="submit($event)" class="form-horizontal">
+
+                    <fieldset>
+                        <legend>资讯</legend>
+                        <div class="form-group col-md-12">
+                            <label class="control-label"> {{ "category" | i18n }}</label>
+                            <div class="controls">
+                                <select class="form-control">
+                                    <option *ngFor="let opt of categories">{{ opt.Name }}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <ul class="nav nav-tabs nav-pills navbar-bottom nav-justified">
+                            <li><a href="#tab_language_cn" role="tab" data-toggle="tab">{{ "language_cn" | i18n }}</a></li>
+                            <li><a href="#tab_language_tw" role="tab" data-toggle="tab">{{ "language_tw" | i18n }}</a></li>
+                            <li><a href="#tab_language_en" role="tab" data-toggle="tab">{{ "language_en" | i18n }}</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="tab_language_cn">
+                                <div class="form-group col-md-12">
+                                    <label class="control-label">
+                                       {{ "title_cn" | i18n }}
+                                    </label>
+                                    <div class="controls">
+                                        <input type="text" id="Title" name="Title" class="form-control requried" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label class="control-label">{{ "summary_cn" | i18n }}</label>
+                                    <div class="controls">
+                                        <div xi-editor id="cn_summary" class="editor"></div>
+                                        <input type="hidden" id="Summary" name="Summary" value="" />
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-md-12">
+                                    <label class="control-label">{{ "body_cn" | i18n }}</label>
+                                    <div class="controls">
+                                        <div xi-editor id="cn_body" class="editor"></div>
+                                        <input type="hidden" id="Body" name="Body" value="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ----------------------------------------------------- -->
+                            <div class="tab-pane" id="tab_language_tw">
+                                <div class="form-group col-md-12">
+                                    <label class="control-label">
+                                        {{ "title_tw" | i18n }}
+                                    </label>
+                                    <div class="controls">
+                                        <input type="text" id="Title_TW" name="Title_TW" class="form-control requried" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label class="control-label">{{ "summary_tw" | i18n }}</label>
+                                    <div class="controls">
+                                        <div xi-editor id="tw_summary" class="editor"></div>
+                                        <input type="hidden" id="Summary_TW" name="Summary_TW" value="" />
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-md-12">
+                                    <label class="control-label">{{ "body_tw" | i18n }}</label>
+                                    <div class="controls">
+                                        <div xi-editor id="tw_body" class="editor"></div>
+                                        <input type="hidden" id="Body_TW" name="Body_TW" value="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ----------------------------------------------------- -->
+                            <div class="tab-pane" id="tab_language_en">
+                                <div class="form-group col-md-12">
+                                    <label class="control-label">
+                                        {{ "title_en" | i18n }}
+                                    </label>
+                                    <div class="controls">
+                                        <input type="text" id="Title_EN" name="Title_EN" class="form-control requried" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label class="control-label">{{ "summary_en" | i18n }}</label>
+                                    <div class="controls">
+                                        <div xi-editor id="en_summary" class="editor"></div>
+                                        <input type="hidden" id="Summary_EN" name="Summary_EN" value="" />
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group col-md-12">
+                                    <label class="control-label">{{ "body_en" | i18n }}</label>
+                                    <div class="controls">
+                                        <div xi-editor id="en_body" class="editor"></div>
+                                        <input type="hidden" id="Body_EN" name="Body_EN" value="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label class="control-label">
+                                {{ "attachment" | i18n }}
+                            </label>
+                            <input type="file" id="Attachment" name="Attachment" />
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="control-label">
+                                {{ "photo" | i18n }}
+                            </label>
+                            <input type="file" id="PhotoUploader" class="form-control PhotoURL" />
+                            <input type="hidden" id="PhotoUrl" name="PhotoUrl" value="" />
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">{{ "save" | i18n }}</button>
+                            <button type="button" class="btn" onclick="history.go(-1);">{{ "cancel" | i18n }}</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    function RefreshSummary() {
+        try {
+            var v1 = $.trim($('#cn_summary').html());
+            var v2 = $.trim($('#tw_summary').html());
+            var v3 = $.trim($('#en_summary').html());
+
+            $("#Summary").val(v1);
+            $("#Summary_TW").val(v2);
+            $("#Summary_EN").val(v3);
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function RefreshBody() {
+        try {
+            var v1 = $.trim($('#cn_body').html());
+            var v2 = $.trim($('#tw_body').html());
+            var v3 = $.trim($('#en_body').html());
+
+            $("#Body").val(encodeURIComponent(v1));
+            $("#Body_TW").val(encodeURIComponent(v2));
+            $("#Body_EN").val(encodeURIComponent(v3));
+        } catch (e) {
+            return false;
+        }
+    }
+
+    $(function () {
+        $('#cn_summary').wysiwyg({ hotKeys: {}, toolbarSelector: '#cn_summary_Toolbar [data-role=editor-toolbar]', change: RefreshSummary });
+        $('#tw_summary').wysiwyg({ hotKeys: {}, toolbarSelector: '#tw_summary_Toolbar [data-role=editor-toolbar]', change: RefreshSummary });
+        $('#en_summary').wysiwyg({ hotKeys: {}, toolbarSelector: '#en_summary_Toolbar [data-role=editor-toolbar]', change: RefreshSummary });
+        $('#cn_body').wysiwyg({ hotKeys: {}, toolbarSelector: '#cn_body_Toolbar [data-role=editor-toolbar]', change: RefreshBody });
+        $('#tw_body').wysiwyg({ hotKeys: {}, toolbarSelector: '#tw_body_Toolbar [data-role=editor-toolbar]', change: RefreshBody });
+        $('#en_body').wysiwyg({ hotKeys: {}, toolbarSelector: '#en_body_Toolbar [data-role=editor-toolbar]', change: RefreshBody });
+
+        try {
+            $('#TabLanguageMgr a:first').tab('show');
+        } catch (e) {
+        }
+
+        $('#btn_period').click(function () {
+            if ($('#Tiding_Period').hasClass("sw-period")) {
+                $('#Tiding_Period .modal').modal('toggle');
+            } else
+                $('#Tiding_Period').period({
+                    callback: function (model) {
+                        var desc = "";
+                        if (model) {
+                            var isCalcFrom = model.IsCalcFromStartDate;
+                            var num = model.Num;
+                            var title = ["时段", "天", "周", "月", "年", "小时", "分钟", "秒"];
+
+                            var desc = "";
+                            if (model.Category == 1)
+                                desc = "从" + model.StartDate.ToDate().ToString() + " 至 " + model.EndDate.ToDate().ToString();
+                            else {
+                                desc = isCalcFrom ? "从" + model.StartDate.ToDate().ToString() + "开始 " : "";
+                                desc += num + title[model.Category - 1];
+                            }
+                            $('#PeriodID').val(model.ID);
+                        }
+                        $('#period_info').html(desc);
+                    }
+                });
+        });
+
+        //uploadify - multiple uploads
+        try {
+            setTimeout(function () {
+                $('#PhotoUploader').uploadify({
+                    'auto': true,
+                    'debug': false,
+                    'multi': true,
+                    'swf': '/assets/uploadify/uploadify.swf',
+                    'uploader': '/Upload/InfoPhotoUpload',
+                    'cancelImage': '/assets/uploadify/uploadify-cancel.png',
+                    'buttonClass': 'btn',
+                    'buttonText': bamboo.i18n[bamboo.language].uploadify.select,
+                    'postData': { category: $('#CateID').val() || 0, product: $('#ID').val() || 0, isTemp: true },
+                    'fileTypeExts': '*.gif; *.jpg; *.png;',
+                    'removeCompleted': false,
+                    'onUploadSuccess': function (file, data, response) {
+                        //console.log(file);
+                        //console.log(data);
+                        //console.log(response);
+                        var photos = $('#FrmInfoCreate').data('photos') || [];
+                        photos = photos.concat(eval(data));
+                        $('#FrmInfoCreate').data('photos', photos);
+                        $('#PhotoUrl').val(photos.join(','));
+                    }
+                });
+            }, 10);
+        } catch (e) {
+            alert("初始化失敗，請重載頁面！");
+        }
+
+        $('#FrmInfoCreate').validate({
+            errorElement: "span",
+            errorClass: "help-inline"
+        });
+        $('#FrmInfoCreate').ajaxForm({
+            beforeSubmit: function () {
+                //if ($('#PeriodID').val() <= 0) {
+                //    alert("必须选择发布时段");
+                //    return false;
+                //}
+                //if ($.trim($('#Body').val()) == "") {
+                //    alert("必须填写内容");
+                //    return false;
+                //}
+                return $('#FrmInfoCreate').valid();
+            },
+            success: function (ret) {
+                if (ret.success) {
+                    alert(bamboo.Global(ret.success));
+                    location.href = "/InfoMgr/Index";
+                } else { alert(bamboo.Global(ret.error)); }
+            }
+        });
+    });
+
+</script>

@@ -12,7 +12,7 @@ const routes: Routes = [
         path: '',
         component: ArticleComponent
     }, {
-        path: ':id', component: ArticleDetailComponent,
+        path: 'detail/:id', component: ArticleDetailComponent,
         resolve: {
             article: ArticleDetailResolver
         }

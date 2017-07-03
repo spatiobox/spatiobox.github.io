@@ -8,7 +8,6 @@ import { AuthGuard } from "app/_services/auth-guard.service";
 import { AuthService } from "app/_services/auth.service";
 import { CommonModule } from "@angular/common";
 import { ShareModule } from "app/share.module";
-import { I18nPipe } from "app/_pipes/i18n.pipe";
 import { UserModule } from "app/pivot/user/user.module";
 import { NavComponent } from './nav/nav.component';
 import { ArticleModule } from "app/pivot/article/_.module";
@@ -28,8 +27,8 @@ import { ArticleModule } from "app/pivot/article/_.module";
     ],
     providers: [
         AuthGuard,
-        AuthService,
-        I18nPipe
+        AuthService
+
     ],
     exports: []
 })

@@ -7,6 +7,7 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, Router, ActivatedRoute } f
 
 export class ArticleDetailComponent implements OnInit {
     title = 'article';
+    model = null;
 
     constructor(private route: ActivatedRoute) {
     }
@@ -17,6 +18,7 @@ export class ArticleDetailComponent implements OnInit {
 
         this.route.data.subscribe((data: { article: any }) => {
             console.log('route data', data);
+            this.model = data;
         });
     }
 }

@@ -1,10 +1,77 @@
-<p>
-    user works! user works! user works! user works! user works! user works! user works! user works! user works! user works! user
-    works! user works! user works! user works! user works! user works! user works! user works! user works! user works! user
-    works! user works! user works! user works! user works!
-</p>
-<p>
-    user works! user works! user works! user works! user works! user works! user works! user works! user works! user works! user
-    works! user works! user works! user works! user works! user works! user works! user works! user works! user works! user
-    works! user works! user works! user works! user works!
-</p>
+<div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="/pivot">{{ "pivot" | i18n }}</a>
+        </li>
+        <li>
+            <a href="/article">{{ title | i18n }}</a>
+        </li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="fa fa-info-sign"></i>{{ title }}</h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-default"><i class="fa fa-cog"></i></a>
+                    <a href="#" class="btn btn-default"><i class="fa fa-chevron-up"></i></a>
+                    <a href="#" class="btn btn-default"><i class="fa fa-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <!-- put your content here -->
+                <div id="infos_list">
+                    <table class="table table-striped table-bordered table-condensed">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" (change)="toggle($event, null, this.value)" ng-value="true" /></th>
+                                <th>{{ "category" | i18n }}</th>
+                                <th>{{ "title" | i18n }}</th>
+                                <th>{{ "attachment" | i18n }}</th>
+                                <th>{{ "is_delete" | i18n }}</th>
+                                <th>{{ "date" | i18n }}</th>
+                                <th>{{ "operation" | i18n }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let node of models">
+                                <td> <input type="checkbox" id="chk_{{ node.ID }}" class="chk_nb" value="{{ node.ID }}" />
+                                </td>
+                                <td> {{ node.Category.Title }}
+                                </td>
+                                <td> {{ node.Title }}
+                                </td>
+                                <td> <a *ngIf="node.Attachment" target="_blank" href="/Download/InfoAttachment/{{node.ID}}" title="{{node.Attachment}}">
+                                                <img src="~/Images/gnome_mail_attachment.png" /></a>
+                                </td>
+                                <td> {{ node.IsDelete }} </td>
+                                <td> {{ node.CreateDate | date: "yyyy-MM-dd HH:mm" }} </td>
+                                <td>
+                                    <a href="/pivot/article/{{ node.ID }}" title="{{ 'view' | i18n }}"><i class="fa fa-search fa-white"></i></a>|
+                                    <a href="/pivot/article/{{ node.ID }}/edit" title="{{ 'delete' | i18n }}"><i class="fa fa-edit fa-white"></i></a>|
+                                    <a (click)="deletes($event, node);" title="{{ 'delete' | i18n }}"><i class="fa fa-trash fa-white"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="subnav">
+    <ul class="nav nav-pills">
+        <li>
+            <a class="btn btn-primary" href="/pivot/article/create"><i class="fa fa-plus"></i>{{ "create" | i18n}}</a>
+        </li>
+
+        <li>
+            <a class="btn btn-danger" (click)="deletes($event);"><i class="fa fa-trash"></i> {{"delete"| i18n}}</a>
+        </li>
+    </ul>
+</div>

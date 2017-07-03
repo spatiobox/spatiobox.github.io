@@ -9,6 +9,7 @@ import { ArticleRoutingModule } from "app/pivot/article/_.routing";
 import { ArticleDetailComponent } from "app/pivot/article/detail.component";
 import { ArticleDetailResolver } from "app/pivot/article/resolve.service";
 import { ArticleService } from "app/_services/article.service";
+import { ShareModule } from "app/share.module";
 
 
 
@@ -21,7 +22,9 @@ import { ArticleService } from "app/_services/article.service";
     ],
     imports: [
         CommonModule,
+        ShareModule,
         ArticleRoutingModule
+
     ],
     providers: [ArticleService]
 })

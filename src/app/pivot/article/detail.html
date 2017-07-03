@@ -1,2 +1,61 @@
-Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail
-Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail Detail
+<div>
+    <ul class="breadcrumb">
+        <li>
+            <a href="/pivot"> {{ "dashboard" | i18n }}</a>
+        </li>
+        <li>
+            <a href="/article"> {{ "info_management" | i18n }}</a>
+        </li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="box col-md-12">
+        <div class="box-inner">
+            <div class="box-header well" data-original-title="">
+                <h2><i class="glyphicon glyphicon-hdd"></i> {{ "article_management" | i18n}}</h2>
+
+                <div class="box-icon">
+                    <a href="#" class="btn btn-setting btn-round btn-default"><i class="glyphicon glyphicon-cog"></i></a>
+                    <a href="#" class="btn btn-minimize btn-round btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <!-- put your content here -->
+                <div class="board-content">
+                    <section>
+
+                        <div class="board-header">
+                            <h1 class="title">
+                                {{ model.title }}
+                            </h1>
+                            <div class="summary center">
+                                {{ model.CreateDate }}
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div class="board-body">
+                            {{ model.Body }}
+                        </div>
+
+                        <div class="board-footer">
+                            <div *ngIf="model.Attachment">
+                                <span>附件：</span>
+                                <a target="_blank" href="/Download/InfoAttachment/{{ model.ID }}" style="margin: 5px 10px;">{{ model.Attachment }}</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <p>
+                    <a class="btn btn-sm btn-info" href="javascript:history.go(-1);">
+                        <i class="icon-share-alt icon-white"></i>
+                        返回                                            
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
