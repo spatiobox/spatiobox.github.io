@@ -4,7 +4,7 @@ import { ProfileService } from "app/_services/profile.service";
 declare var sessionStorage: any;
 
 @Component({
-  selector: 'povit-nav',
+  selector: 'pivot-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })

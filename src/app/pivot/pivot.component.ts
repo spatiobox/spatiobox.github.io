@@ -11,7 +11,7 @@ export class PivotComponent {
     navs = [];
     constructor(private $auth: AuthService, private $router: Router) {
 
-
+        console.log('oh my god pivot')
     }
 
     logout() {

@@ -8,7 +8,8 @@ const routes: Routes = [
         path: '',
         component: HomeComponent,
         children: [
-            { path: 'infos', loadChildren: 'app/home/infos/_.module#InfosModule' }
+            { path: 'infos', loadChildren: 'app/home/infos/_.module#InfosModule' },
+            { path: 'downloads', loadChildren: 'app/home/downloads/_.module#DownloadsModule' }
         ]
     }
 ];

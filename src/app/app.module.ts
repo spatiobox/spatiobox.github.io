@@ -14,7 +14,6 @@ import { AuthGuard } from "app/_services/auth-guard.service";
 import { AuthModule } from "app/auth/auth.module";
 import { CommonModule } from '@angular/common';
 import { UIModule } from "app/ui/ui.module";
-import { DashboardModule } from "app/dashboard/dashboard.module";
 import { NavigationComponent } from "app/navigation/navigation.component";
 import { ProfileService } from "app/_services/profile.service";
 import { HeaderComponent } from "app/navigation/header.component";
@@ -46,7 +45,7 @@ import { ShareModule } from "app/share.module";
     //home
     HomeModule,
     UIModule,
-    DashboardModule,
+    PivotModule,
 
 
     //auth

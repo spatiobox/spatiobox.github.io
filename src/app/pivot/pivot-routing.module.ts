@@ -5,12 +5,16 @@ import { AuthGuard } from "app/_services/auth-guard.service";
 import { PivotComponent } from "app/pivot/pivot.component";
 
 const routes: Routes = [
-    { path: '', redirectTo: '/pivot', pathMatch: 'full' },
     {
-        path: 'pivot',
+        path: '',
         component: PivotComponent,
         canActivate: [AuthGuard],
         children: [
+            {
+                path: 'dashboard',
+                loadChildren: 'app/pivot/dashboard/_.module#DashboardModule',
+                canLoad: [AuthGuard]
+            },
             {
                 path: 'article',
                 loadChildren: 'app/pivot/article/_.module#ArticleModule',

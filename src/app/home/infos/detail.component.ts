@@ -13,7 +13,7 @@ export class InfosDetailComponent implements OnInit {
 
     ngOnInit() {
         let id = this.route.snapshot.paramMap.get('id');
-        console.log('detail', id, this.route);
+        console.log('route', id, this.route);
 
         this.route.data.subscribe((data: { article: any }) => {
             console.log('route data', data);
