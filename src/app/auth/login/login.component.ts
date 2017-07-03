@@ -5,7 +5,7 @@ import { ProfileService } from "app/_services/profile.service";
 import { XI } from "app/xi.global";
 
 @Component({
-    templateUrl: './login.component.html'
+    templateUrl: './login.html'
 })
 
 export class LoginComponent {

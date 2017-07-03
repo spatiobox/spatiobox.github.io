@@ -1,5 +1,5 @@
 <div>
-    <ul class="breadcrumb">
+    <ul class="breadcrumb" style="border-radius: 0px;">
         <li>
             <a href="/pivot">{{ "pivot" | i18n }}</a>
         </li>
@@ -13,12 +13,12 @@
     <div class="box col-md-12">
         <div class="box-inner">
             <div class="box-header well" data-original-title="">
-                <h2><i class="fa fa-info-sign"></i>{{ title }}</h2>
+                <h2><i class="glyphicon glyphicon-info-sign"></i>{{ title }}</h2>
 
                 <div class="box-icon">
-                    <a href="#" class="btn btn-default"><i class="fa fa-cog"></i></a>
-                    <a href="#" class="btn btn-default"><i class="fa fa-chevron-up"></i></a>
-                    <a href="#" class="btn btn-default"><i class="fa fa-remove"></i></a>
+                    <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-cog"></i></a>
+                    <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                    <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-remove"></i></a>
                 </div>
             </div>
             <div class="box-content">
@@ -51,9 +51,9 @@
                                 <td> {{ node.IsDelete }} </td>
                                 <td> {{ node.CreateDate | date: "yyyy-MM-dd HH:mm" }} </td>
                                 <td>
-                                    <a href="/pivot/article/{{ node.ID }}" title="{{ 'view' | i18n }}"><i class="fa fa-search fa-white"></i></a>|
-                                    <a href="/pivot/article/{{ node.ID }}/edit" title="{{ 'delete' | i18n }}"><i class="fa fa-edit fa-white"></i></a>|
-                                    <a (click)="deletes($event, node);" title="{{ 'delete' | i18n }}"><i class="fa fa-trash fa-white"></i></a>
+                                    <a href="/pivot/article/{{ node.ID }}" title="{{ 'view' | i18n }}"><i class="glyphicon glyphicon-search glyphicon-white"></i></a>|
+                                    <a href="/pivot/article/{{ node.ID }}/edit" title="{{ 'delete' | i18n }}"><i class="glyphicon glyphicon-edit glyphicon-white"></i></a>|
+                                    <a (click)="deletes($event, node);" title="{{ 'delete' | i18n }}"><i class="glyphicon glyphicon-trash glyphicon-white"></i></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -67,11 +67,11 @@
 <div class="subnav">
     <ul class="nav nav-pills">
         <li>
-            <a class="btn btn-primary" href="/pivot/article/create"><i class="fa fa-plus"></i>{{ "create" | i18n}}</a>
+            <a class="btn btn-primary" href="/pivot/article/create"><i class="glyphicon glyphicon-plus"></i>{{ "create" | i18n}}</a>
         </li>
 
         <li>
-            <a class="btn btn-danger" (click)="deletes($event);"><i class="fa fa-trash"></i> {{"delete"| i18n}}</a>
+            <a class="btn btn-danger" (click)="deletes($event);"><i class="glyphicon glyphicon-trash"></i> {{"delete"| i18n}}</a>
         </li>
     </ul>
 </div>

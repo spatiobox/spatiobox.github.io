@@ -6,6 +6,7 @@ import { AuthGuard } from "app/_services/auth-guard.service";
 import { AuthService } from "app/_services/auth.service";
 import { CommonModule } from "@angular/common";
 import { RegisterComponent } from './register/register.component';
+import { ShareModule } from "app/share.module";
 
 @NgModule({
     declarations: [
@@ -14,12 +15,13 @@ import { RegisterComponent } from './register/register.component';
     ],
     imports: [
         CommonModule,
+        ShareModule,
         AuthRoutingModule
     ],
     providers: [
         AuthGuard,
         AuthService
     ],
-    exports: [LoginComponent]
+    exports: [LoginComponent, RegisterComponent]
 })
 export class AuthModule { }

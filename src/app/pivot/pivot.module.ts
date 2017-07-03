@@ -11,6 +11,7 @@ import { ShareModule } from "app/share.module";
 import { UserModule } from "app/pivot/user/user.module";
 import { NavComponent } from './nav/nav.component';
 import { ArticleModule } from "app/pivot/article/_.module";
+import { DashboardModule } from "app/pivot/dashboard/_.module";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ArticleModule } from "app/pivot/article/_.module";
         PivotRoutingModule,
         ShareModule,
         ArticleModule,
-        UserModule
+        UserModule,
+        DashboardModule
     ],
     providers: [
         AuthGuard,

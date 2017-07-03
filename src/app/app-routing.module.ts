@@ -17,11 +17,11 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
+    RouterModule.forRoot(routes/*, {
       enableTracing: false,
       useHash: false,
       preloadingStrategy: AppPreloadingStrategyService
-    }/* <-- debugging purposes only*/)
+    }*//* <-- debugging purposes only*/)
   ],
   exports: [RouterModule]
 })

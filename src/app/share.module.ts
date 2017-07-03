@@ -1,5 +1,5 @@
-
 import { NgModule } from "@angular/core";
+import { FlexLayoutModule } from "@angular/flex-layout";
 import {
     OverlayModule
     , MdCardModule
@@ -42,6 +42,7 @@ import { I18nPipe } from "app/_pipes/i18n.pipe";
 @NgModule({
     declarations: [I18nPipe],
     exports: [
+        FlexLayoutModule,
         I18nPipe,
 
         OverlayModule

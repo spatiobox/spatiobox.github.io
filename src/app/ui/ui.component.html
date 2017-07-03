@@ -1,3 +1,8 @@
-<div>ui test {{ title }}
+<div fxLayout='column' class="zero ">
+    <div fxFlex="64px" class="one" style="background-color: lightblue">1</div>
+    <div fxFlex="calc(100vh - 64px)" [fxLayout]="direction" class="two">
+        <div fxFlex="180px" class="two_one" style="background-color: lightgreen">2</div>
+        <div fxFlex="calc(100vw - 180px)" class="two_three" style="background-color: #DDBDF1">4</div>
+        <div fxFlex="30" class="two_two" style="background-color: lightpink">3</div>
+    </div>
 </div>
-<div class="section"></div>

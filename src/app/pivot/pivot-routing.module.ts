@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from "app/dashboard/dashboard.component";
 import { AuthGuard } from "app/_services/auth-guard.service";
 import { PivotComponent } from "app/pivot/pivot.component";
 
