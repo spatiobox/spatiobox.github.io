@@ -6,7 +6,7 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, Router, ActivatedRoute } f
 })
 
 export class InfosDetailComponent implements OnInit {
-    title = 'article';
+    title = 'infos';
 
     constructor(private route: ActivatedRoute) {
     }

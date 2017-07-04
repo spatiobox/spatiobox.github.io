@@ -5,6 +5,7 @@ import { UIComponent } from "app/ui/ui.component";
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
     component: UIComponent,
     children: []
   }

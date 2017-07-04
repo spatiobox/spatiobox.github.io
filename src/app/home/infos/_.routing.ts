@@ -7,9 +7,15 @@ import { InfosDetailComponent } from "app/home/infos/detail.component";
 const routes: Routes = [
     {
         path: '',
-        component: InfosComponent
-    }, {
-        path: ':id', component: InfosDetailComponent
+        children: [{
+            path: '',
+            pathMatch: 'full',
+            component: InfosComponent,
+
+        }, {
+            path: ':id',
+            component: InfosDetailComponent
+        }]
     }
 ];
 

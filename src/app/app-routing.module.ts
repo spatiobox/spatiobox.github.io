@@ -10,18 +10,19 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'ui', loadChildren: 'app/ui/ui.module#UIModule' },
   { path: 'home', loadChildren: 'app/home/home.module#HomeModule' },
-  { path: 'pivot', loadChildren: 'app/pivot/pivot.module#PivotModule' },
+  { path: 'pivot', loadChildren: 'app/pivot/pivot.module#PivotModule' }
+
   // { path: 'pivot', loadChildren: 'app/pivot/pivot.module#PivotModule' },
   // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes/*, {
+    RouterModule.forRoot(routes, {
       enableTracing: false,
       useHash: false,
       preloadingStrategy: AppPreloadingStrategyService
-    }*//* <-- debugging purposes only*/)
+    }/* <-- debugging purposes only*/)
   ],
   exports: [RouterModule]
 })

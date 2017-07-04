@@ -21,7 +21,7 @@ const routes: Routes = [
         // canDeactivate: [CanDeactivateGuard] //编辑退出时，进行拦截
         // outlet: "box",
     }, {
-        path: 'edit', component: ArticleEditComponent,
+        path: 'edit/:id', component: ArticleEditComponent,
         // canDeactivate: [CanDeactivateGuard] //编辑退出时，进行拦截
     }
 ];

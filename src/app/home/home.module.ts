@@ -5,14 +5,15 @@ import { HomeRoutingModule } from './home-routing.module';
 import { CommonModule } from "@angular/common";
 import { NavComponent } from './nav/nav.component';
 import { InfosModule } from "app/home/infos/_.module";
-import { DownloadsModule } from "app/home/downloads/_.module";
 import { ShareModule } from "app/share.module";
+import { DownloadsModule } from "app/home/downloads/_.module";
 
 
 @NgModule({
     declarations: [
         HomeComponent,
         NavComponent
+
     ],
     imports: [
         CommonModule,

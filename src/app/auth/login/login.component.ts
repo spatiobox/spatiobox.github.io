@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { AuthService } from "app/_services/auth.service";
 import { ProfileService } from "app/_services/profile.service";
@@ -8,7 +8,7 @@ import { XI } from "app/xi.global";
     templateUrl: './login.html'
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit {
     message: string;
 
     constructor(private $auth: AuthService, private $profile: ProfileService, private $router: Router) {
@@ -23,7 +23,7 @@ export class LoginComponent {
                 // this.$router.navigate(['/']);
                 // Get the redirect URL from our auth service
                 // If no redirect has been set, use the default
-                let redirect = this.$auth.redirectUrl ? this.$auth.redirectUrl : '/pivot';
+                let redirect = this.$auth.redirectUrl ? this.$auth.redirectUrl : '/pivot/dashboard';
 
 
                 // Set our navigation extras object
@@ -41,6 +41,10 @@ export class LoginComponent {
                 return;
             });
         }
+    }
+
+    ngOnInit() {
+
     }
 
     setMessage() {
@@ -67,7 +71,7 @@ export class LoginComponent {
                     // Get the redirect URL from our auth service
                     // If no redirect has been set, use the default
                     // let redirect = this.$auth.redirectUrl ? this.$auth.redirectUrl : '/pivot';
-                    let redirect = '/pivot';
+                    let redirect = '/pivot/dashboard';
 
                     // Set our navigation extras object
                     // that passes on our global query params and fragment

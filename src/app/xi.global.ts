@@ -6,7 +6,8 @@ import { Http, Headers, Request, RequestMethod, RequestOptions, URLSearchParams 
 declare var localStorage: any;
 
 export const XI = {
-    location: "http://localhost",
+    // location: "http://localhost",
+    location: "http://productsvc.oms-x.com",
     CreateGuid: (function (uuidRegEx: any, uuidReplacer: any) {
         return function () {
             return "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx".replace(uuidRegEx, uuidReplacer).toUpperCase();
