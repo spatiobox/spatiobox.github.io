@@ -11,6 +11,7 @@ const routes: Routes = [
     {
         path: '',
         component: HomeComponent,
+        pathMatch: 'full',
         children: [
             { path: 'infos', loadChildren: 'app/home/infos/_.module#InfosModule' },
             { path: 'downloads', loadChildren: 'app/home/downloads/_.module#DownloadsModule' }

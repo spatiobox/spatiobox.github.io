@@ -9,6 +9,11 @@ const routes: Routes = [
         component: PivotComponent,
         canActivate: [AuthGuard],
         children: [
+            // {
+            //     path: '',
+            //     pathMatch: 'full',
+            //     redirectTo: '/dashboard'
+            // },
             {
                 path: 'dashboard',
                 loadChildren: 'app/pivot/dashboard/_.module#DashboardModule',

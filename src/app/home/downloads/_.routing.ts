@@ -8,6 +8,7 @@ import { DownloadsComponent } from "app/home/downloads/downloads.component";
 const routes: Routes = [
     {
         path: '',
+        pathMatch: 'full',
         children: [{
             path: '',
             pathMatch: 'full',
