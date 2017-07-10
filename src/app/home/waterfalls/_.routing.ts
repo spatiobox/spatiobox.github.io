@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, ActivatedRouteSnapshot } from '@angular/router';
 import { CanDeactivateGuard } from "app/_services/can-deactive-guard.service";
 
-import { DownloadsDetailComponent } from "app/home/downloads/detail.component";
-import { DownloadsComponent } from "app/home/downloads/downloads.component";
+import { WaterfallsDetailComponent } from "app/home/waterfalls/detail.component";
+import { WaterfallsComponent } from "app/home/waterfalls/waterfalls.component";
 
 const routes: Routes = [
     {
         path: '',
         children: [{
             path: '',
-            component: DownloadsComponent,
+            component: WaterfallsComponent,
 
         }, {
             path: ':id',
-            component: DownloadsDetailComponent
+            component: WaterfallsDetailComponent
         }]
     }
 ];
@@ -24,4 +24,4 @@ const routes: Routes = [
     exports: [RouterModule],
     providers: []
 })
-export class DownloadsRoutingModule { }
+export class WaterfallsRoutingModule { }

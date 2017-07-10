@@ -1,16 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+@Component({ templateUrl: './home.html' })
 
-@Component({
-    templateUrl: './home.component.html'
-})
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
     title = 'home';
-    onActivate($event) {
 
+    ngOnInit(): void {
     }
-    onDeactivate($event) {
 
-    }
+    onActivate($event) { }
+
+    onDeactivate($event) { }
 }
-

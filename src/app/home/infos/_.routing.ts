@@ -7,10 +7,8 @@ import { InfosDetailComponent } from "app/home/infos/detail.component";
 const routes: Routes = [
     {
         path: '',
-        pathMatch: 'full',
         children: [{
             path: '',
-            pathMatch: 'full',
             component: InfosComponent,
 
         }, {

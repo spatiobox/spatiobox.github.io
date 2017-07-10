@@ -5,6 +5,7 @@ import { UserComponent } from "app/pivot/user/user.component";
 const routes: Routes = [
     {
         path: '',
+        pathMatch: 'full',
         component: UserComponent,
         children: []
     }

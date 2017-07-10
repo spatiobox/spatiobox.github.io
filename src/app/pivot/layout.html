@@ -1,0 +1,35 @@
+<div fxLayout='column' class="zero" style="overflow:hidden;">
+    <div fxFlex="64px" class="one" style="background-color: lightblue">
+        <md-toolbar color="primary">
+
+            <!--<md-toolbar-row>-->
+            <button md-icon-button (click)="sidenav.isShut = !sidenav.isShut;">
+                 <i *ngIf="sidenav.isShut" class="glyphicon glyphicon-list"></i> 
+                 <i *ngIf="!sidenav.isShut" class="glyphicon glyphicon-align-justify"></i> 
+            </button>
+
+            <span class="example-spacer" style="flex: 1 1 auto;"></span>
+            <button md-icon-button [md-menu-trigger-for]="menu"><i class="glyphicon glyphicon-user"></i><span></span></button>
+
+            <!--<a md-raised-button routerLink="."><i class="glyphicon glyphicon-user"></i></a>-->
+            <!--</md-toolbar-row>-->
+        </md-toolbar>
+        <md-menu x-position="before" #menu="mdMenu">
+            <button md-menu-item (click)="sidenav.isShut = !sidenav.isShut;">Settings</button>
+            <button md-menu-item (click)="isDarkTheme=!isDarkTheme">Toggle theme</button>
+            <button md-menu-item>Help</button>
+            <button md-menu-item (click)="logout()">{{ "logout" | i18n }}</button>
+        </md-menu>
+    </div>
+    <div fxFlex="calc(100vh - 64px)" [fxLayout]="direction" class="two">
+        <div #sidenav fxFlex="200px" class="two_one" [class.hidden]="sidenav.isShut" style="overflow: hidden; overflow-y: auto;">
+
+            <pivot-nav></pivot-nav>
+
+        </div>
+        <div fxFlex="calc(100vh - 64px)" class="two_three" style="background-color: #DDBDF1">
+            <router-outlet></router-outlet>
+        </div>
+        <!--<div fxFlex="30" class="two_two" style="background-color: lightpink">3</div>-->
+    </div>
+</div>

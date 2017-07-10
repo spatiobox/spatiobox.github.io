@@ -10,20 +10,33 @@ import { ArticleDetailResolver } from "app/pivot/article/resolve.service";
 const routes: Routes = [
     {
         path: '',
-        component: ArticleComponent
-    }, {
-        path: 'detail/:id', component: ArticleDetailComponent,
+        children: [
+            {
+                path: '',
+                component: ArticleComponent
+            }, {
+                path: 'create', component: ArticleCreateComponent,
+                // canDeactivate: [CanDeactivateGuard] //编辑退出时，进行拦截
+                // outlet: "box",
+            },
+        ]
+    },
+    {
+        path: ':id',
         resolve: {
             article: ArticleDetailResolver
-        }
-    }, {
-        path: 'create', component: ArticleCreateComponent,
-        // canDeactivate: [CanDeactivateGuard] //编辑退出时，进行拦截
-        // outlet: "box",
-    }, {
-        path: 'edit/:id', component: ArticleEditComponent,
-        // canDeactivate: [CanDeactivateGuard] //编辑退出时，进行拦截
+        },
+        children: [
+            {
+                path: 'edit', component: ArticleEditComponent,
+            },
+            {
+                path: '', component: ArticleDetailComponent,
+                pathMatch: 'full'
+            }
+        ]
     }
+
 ];
 
 @NgModule({

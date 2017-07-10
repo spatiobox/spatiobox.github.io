@@ -5,6 +5,7 @@ import { DashboardComponent } from "app/pivot/dashboard/dashboard.component";
 const routes: Routes = [
     {
         path: '',
+        pathMatch: 'full',
         component: DashboardComponent,
         children: []
     }
