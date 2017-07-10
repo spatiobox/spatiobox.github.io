@@ -1,10 +1,10 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { AuthService } from "app/_services/auth.service";
 import { Router, NavigationExtras } from "@angular/router";
-import { NavigationComponent } from "app/navigation/navigation.component";
 
 @Component({
-    templateUrl: './layout.html'
+    templateUrl: './layout.html',
+    styleUrls: ['./style.scss']
     // encapsulation: ViewEncapsulation.None
 })
 export class PivotLayout {

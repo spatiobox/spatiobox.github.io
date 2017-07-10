@@ -3,80 +3,11 @@
 body {
     padding: 0;
     margin: 0;
-    height: 100vh;
     * {
         box-sizing: border-box;
     }
 }
 
-.jumbotron {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    color: #e7e7e7;
-    background-color: #eeeeee;
-    max-height: 300px;
-    overflow: hidden;
-}
-
 .breadcrumb {
     border-radius: 0px;
-}
-
-#xi-nav {
-    background: transparent; // border: none;
-    ul.navbar-nav {
-        &>li {
-            &>a {
-                font-size: 18px;
-                color: #fff;
-                cursor: pointer;
-                background-color: transparent;
-                border: solid 3px transparent;
-                border-width: 3px 0px;
-                &:hover {
-                    border-bottom-color: rgba(#efbca0, 0.5); // color: lighten(#efbca0, 5%);
-                }
-            }
-            &.active {
-                &>a {
-                    border-bottom-color: #efbca0; // color: #efbca0;
-                }
-            }
-        }
-    }
-}
-
-.xi-toolbar .xi-toolbar-row {
-    display: flex;
-    box-sizing: border-box;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    white-space: nowrap;
-}
-
-.xi-toolbar-row {
-    height: 64px;
-}
-
- ::-webkit-scrollbar {
-    width: 4px;
-    height: 10px;
-}
-
- ::-webkit-scrollbar-track-piece {
-    background-color: rgba(221, 189, 241, 0.4);
-    /*-webkit-border-radius: 6px;*/
-}
-
- ::-webkit-scrollbar-thumb:vertical {
-    height: 5px;
-    background-color: rgba(221, 189, 241, 0.6);
-}
-
- ::-webkit-scrollbar-thumb:horizontal {
-    width: 5px;
-    background-color: rgba(221, 189, 241, 0.5);
-    border-radius: 999px;
 }

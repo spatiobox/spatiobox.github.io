@@ -1,0 +1,53 @@
+@import "src/_variables";
+#home-box {
+    // display: flex;
+    // justify-content: center;
+    width: 80vw;
+    min-width: 1024px;
+    margin: 0 auto;
+    .jumbotron {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        color: #e7e7e7;
+        background-color: #eeeeee;
+        height: 150px;
+        overflow: hidden;
+    }
+    #xi-nav {
+        background: transparent; // border: none;
+        ul.navbar-nav {
+            &>li {
+                &>a {
+                    font-size: 18px;
+                    color: #fff;
+                    cursor: pointer;
+                    background-color: transparent;
+                    border: solid 3px transparent;
+                    border-width: 3px 0px;
+                    &:hover {
+                        background: transparent !important;
+                        border-bottom-color: rgba(#efbca0, 0.5); // color: lighten(#efbca0, 5%);
+                    }
+                }
+                &.active {
+                    &>a {
+                        background: transparent;
+                        border-bottom-color: #efbca0; // color: #efbca0;
+                    }
+                }
+            }
+        }
+    }
+    .xi-toolbar .xi-toolbar-row {
+        display: flex;
+        box-sizing: border-box;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        white-space: nowrap;
+    }
+    .xi-toolbar-row {
+        height: 64px;
+    }
+}

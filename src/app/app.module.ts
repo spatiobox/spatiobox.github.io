@@ -15,9 +15,7 @@ import { AuthGuard } from "app/_services/auth-guard.service";
 import { AuthModule } from "app/auth/auth.module";
 import { CommonModule } from '@angular/common';
 import { UIModule } from "app/ui/ui.module";
-import { NavigationComponent } from "app/navigation/navigation.component";
 import { ProfileService } from "app/_services/profile.service";
-import { HeaderComponent } from "app/navigation/header.component";
 import { PageNotFoundComponent } from "app/page-not-found.component";
 import { AppPreloadingStrategyService } from "app/_services/app-preloading-strategy.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,8 +25,6 @@ import { ShareModule } from "app/share.module";
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
-    HeaderComponent,
     PageNotFoundComponent
   ],
   imports: [
@@ -62,7 +58,7 @@ import { ShareModule } from "app/share.module";
     AppPreloadingStrategyService
   ],
   bootstrap: [AppComponent],
-  exports: [NavigationComponent, PageNotFoundComponent]
+  exports: [PageNotFoundComponent]
 })
 export class AppModule {
   constructor(private router: Router) {
