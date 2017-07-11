@@ -28,8 +28,52 @@ Before running the tests make sure you are serving the app via `ng serve`.
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
-## Functions
+## Functions In Future
 
 - photo waterfall
-- news board
-- 
+- news board / message publishment / blog
+- gallery / slider
+- media player / video
+- 3d canvas
+- gis
+- web rtc
+
+## web tec
+
+- flex layout / grid layout
+-
+
+
+## what are they ?
+
+- angular universal
+- docker
+- jasmine / QUnit /Karma
+- travis ci
+- mock
+- react
+- webpack
+- video.js
+- git 
+- eslint
+- CDN
+- HTTP 2.0 / https / http / W3C
+- CommonJS / AMD
+- jsDoc / swagger
+
+# Conf 前沿技术社区/会议
+- [D2](http://d2forum.org/ "D2")/ [WebRebuild](http://www.webrebuild.org)
+- NodeParty/[W3CTech](http://w3ctech.com)/[HTML5梦工厂](http://www.html5dw.com)
+- [JSConf](http://jsconf.com) / [沪JS(JSConf.cn)](http://jsconf.cn)
+- QCon/Velocity/SDCC
+- [NodeConf](http://www.nodeconf.com)
+- [CSSConf](http://cssconf.com)
+- YDN/YUIConf
+- HybridApp
+- [WHATWG](http://whatwg.org)
+- MDN
+- [codepen](http://codepen.io)
+- [w3cplus](http://w3cplus.com)
+- [CNode](http://cnodejs.org)
+- **[Frontend Knowledge Structure](https://github.com/JacksonTian/fks)**
+- **[Frontend Knowledge Structure](http://html5ify.com/fks/)**
