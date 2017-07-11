@@ -14,7 +14,7 @@ import { AuthService } from "app/_services/auth.service";
 import { AuthGuard } from "app/_services/auth-guard.service";
 import { AuthModule } from "app/auth/auth.module";
 import { CommonModule } from '@angular/common';
-import { UIModule } from "app/ui/ui.module";
+import { UIModule } from "app/ui/_.module";
 import { ProfileService } from "app/_services/profile.service";
 import { PageNotFoundComponent } from "app/page-not-found.component";
 import { AppPreloadingStrategyService } from "app/_services/app-preloading-strategy.service";

@@ -7,7 +7,7 @@ import { AppPreloadingStrategyService } from "app/_services/app-preloading-strat
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'ui', loadChildren: 'app/ui/ui.module#UIModule' },
+  { path: 'ui', loadChildren: 'app/ui/_.module#UIModule' },
   { path: 'home', loadChildren: 'app/home/_.module#HomeModule' },
   { path: 'pivot', loadChildren: 'app/pivot/_.module#PivotModule' }
   // { path: '**', component: PageNotFoundComponent }

@@ -210,6 +210,7 @@ export const XI = {
         "zh-CN": {
             //系统
             "xi": "Xmeta",
+            "pivot": "管理平台",
             "profile": "个人信息",
             "info": "信息",
             "settings": "配置",
@@ -353,6 +354,7 @@ export const XI = {
         "zh-TW": {
             //系统
             "xi": "Xmeta",
+            "pivot": "管理平台",
             "profile": "個人信息",
             "info": "信息",
             "settings": "配置",
@@ -498,6 +500,7 @@ export const XI = {
         },
         "en-US": {
             "xi": "Xmeta",
+            "pivot": "Pivot",
             "profile": "User Profile",
             "info": "Info.",
             "settings": "Settings",
