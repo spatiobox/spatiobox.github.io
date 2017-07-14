@@ -17,7 +17,7 @@ export const XI = {
             v = c == "x" ? r : (r & 3 | 8);
         return v.toString(16);
     }),
-    lang: localStorage.language || window.navigator.language || "zh-CN",
+    lang: localStorage.language /*|| window.navigator.language*/ || "zh-CN",
     showMsg: function (key: any) {
         var arr = key.split(' ');
         var spliter = XI.lang == 'en-US' ? ' ' : '';
@@ -349,6 +349,7 @@ export const XI = {
             "heartbeat": "心跳",
             "package": "包",
             "markas": "置为",
+            "keep": "保持",
             'no_mission_available': '当前无分配任务'
         },
         "zh-TW": {
@@ -496,6 +497,7 @@ export const XI = {
             "heartbeat": "心跳",
             "package": "包",
             "markas": "置為",
+            "keep": "保持",
             'no_mission_available': '當前無分配任務'
         },
         "en-US": {
@@ -641,6 +643,7 @@ export const XI = {
             "heartbeat": "Heartbeat",
             "package": "Package",
             "markas": "Mark as",
+            "keep": "Keep",
             'no_mission_available': 'No mission available'
         }
     }

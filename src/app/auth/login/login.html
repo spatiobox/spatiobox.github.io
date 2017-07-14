@@ -1,9 +1,30 @@
-<div>
-    <h2>
-        LOGIN</h2>
-    <p>{{message}}</p>
-    <p>
-        <button (click)="login()" *ngIf="!$auth.isLoggedIn()">Login</button>
-        <button (click)="logout()" *ngIf="$auth.isLoggedIn()">Logout</button>
-    </p>
+<div id="login-box">
+    <header>{{ 'please login' | i18n }}</header>
+    <form #frmLogin>
+        <div class="form-group">
+            <input class="form-control" name="username" type="text" placeholder="{{ 'account' | i18n }}" required>
+        </div>
+        <div class="form-group ">
+            <input class="form-control " type="password" name="password" placeholder="{{ 'password' | i18n }}" required>
+        </div>
+        <div class="form-group ">
+            <label style="color:#fff;"><input type="checkbox" name="remember" checked> {{ 'keep login' | i18n }}</label>
+            <span>
+                <a class="pull-right" style="color:#fff;" href="/auth/forgot" >{{ 'forgot password' | i18n }}？</a>
+            </span>
+        </div>
+        <div class="form-group ">
+            <button class="btn btn-info form-control" style="font-size:1.2em;" [disabled]="frmLogin.invalid" (click)=" login($event, frmLogin)">
+                {{ 'login' | i18n }}
+                <span id="login-loading-dot" *ngIf="isLoging">
+                    <span class="login-loading-dot-one">.</span><span class="login-loading-dot-two">.</span><span class="login-loading-dot-three">.</span>
+                </span> 
+            </button>
+            <p>
+                <button (click)="login()" *ngIf="!$auth.isLoggedIn()">Login</button>
+                <button (click)="logout()" *ngIf="$auth.isLoggedIn()">Logout</button>
+            </p>
+        </div>
+
+    </form>
 </div>

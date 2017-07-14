@@ -1,0 +1,34 @@
+#auth-box {
+    height: 100vh;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    background-image: url('/assets/images/auth/login_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; // background-position-y: -40px;
+    #login-box {
+        border-radius: 20px;
+        padding: 20px;
+        width: 347px;
+        height: 345px;
+        background: rgba(255, 255, 255, .4);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        header {
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, .2);
+            margin-left: -20px;
+            margin-right: -20px;
+            text-align: center;
+            font-family: MicrosoftYaHeiRegular;
+            font-size: 20px;
+            color: #fff;
+        }
+    }
+}

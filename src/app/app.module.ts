@@ -12,7 +12,7 @@ import { HomeModule } from "app/home/_.module";
 import { PivotModule } from "app/pivot/_.module";
 import { AuthService } from "app/_services/auth.service";
 import { AuthGuard } from "app/_services/auth-guard.service";
-import { AuthModule } from "app/auth/auth.module";
+import { AuthModule } from "app/auth/_.module";
 import { CommonModule } from '@angular/common';
 import { UIModule } from "app/ui/_.module";
 import { ProfileService } from "app/_services/profile.service";

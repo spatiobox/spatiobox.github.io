@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'ui', loadChildren: 'app/ui/_.module#UIModule' },
   { path: 'home', loadChildren: 'app/home/_.module#HomeModule' },
-  { path: 'pivot', loadChildren: 'app/pivot/_.module#PivotModule' }
+  { path: 'pivot', loadChildren: 'app/pivot/_.module#PivotModule' },
+  { path: 'auth', loadChildren: 'app/auth/_.module#AuthModule' }
   // { path: '**', component: PageNotFoundComponent }
 ];
 

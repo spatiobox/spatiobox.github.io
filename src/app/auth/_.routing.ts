@@ -3,12 +3,23 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from "app/auth/login/login.component";
 import { AuthService } from "app/_services/auth.service";
 import { RegisterComponent } from "app/auth/register/register.component";
+import { AuthLayout } from "app/auth/_.layout";
+import { ForgotComponent } from "app/auth/forgot/forgot.component";
 
 
 
 const AuthRoutes: Routes = [
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent }
+    {
+        path: '',
+        component: AuthLayout,
+        children: [
+            { path: '', pathMatch: 'full', redirectTo: 'login' },
+            { path: 'login', component: LoginComponent },
+            { path: 'register', component: RegisterComponent },
+            { path: 'forgot', component: ForgotComponent }
+
+        ]
+    }
 ];
 
 @NgModule({

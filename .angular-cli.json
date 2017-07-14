@@ -22,7 +22,8 @@
         "../node_modules/@angular/material/prebuilt-themes/purple-green.css",
         "_variables.scss",
         "styles.scss",
-        "app/home/style.scss"
+        "app/home/style.scss",
+        "app/auth/style.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

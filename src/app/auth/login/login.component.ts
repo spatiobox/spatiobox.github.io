@@ -10,6 +10,7 @@ import { XI } from "app/xi.global";
 
 export class LoginComponent implements OnInit {
     message: string;
+    isLoging: boolean = false;
 
     constructor(private $auth: AuthService, private $profile: ProfileService, private $router: Router) {
         this.setMessage();
@@ -51,44 +52,49 @@ export class LoginComponent implements OnInit {
         this.message = 'Logged ' + (this.$auth.isLoggedIn() ? 'in' : 'out');
     }
 
-    login() {
+    login(evt, form) {
+        console.log(evt, form, form.username.value);
+
+        evt.stopPropagation();
+        evt.preventDefault();
+        this.isLoging = true;
         this.message = 'Trying to log in ...';
 
-        this.$auth.SignIn({
-            grant_type: 'password',
-            username: 'admin',
-            password: '123456'
-        }).then(_data => {
-            this.setMessage();
-            if (this.$auth.isLoggedIn()) {
+        // this.$auth.SignIn({
+        //     grant_type: 'password',
+        //     username: 'admin',
+        //     password: '123456'
+        // }).then(_data => {
+        //     this.setMessage();
+        //     if (this.$auth.isLoggedIn()) {
 
-                this.$profile.get().subscribe(res => {
-                    var _data = res.json();
+        //         this.$profile.get().subscribe(res => {
+        //             var _data = res.json();
 
-                    sessionStorage.removeItem('profile');
-                    sessionStorage.setItem('profile', JSON.stringify(_data));
-                    // this.$router.navigate(['/']);
-                    // Get the redirect URL from our auth service
-                    // If no redirect has been set, use the default
-                    // let redirect = this.$auth.redirectUrl ? this.$auth.redirectUrl : '/pivot';
-                    let redirect = '/pivot/dashboard';
+        //             sessionStorage.removeItem('profile');
+        //             sessionStorage.setItem('profile', JSON.stringify(_data));
+        //             // this.$router.navigate(['/']);
+        //             // Get the redirect URL from our auth service
+        //             // If no redirect has been set, use the default
+        //             // let redirect = this.$auth.redirectUrl ? this.$auth.redirectUrl : '/pivot';
+        //             let redirect = '/pivot/dashboard';
 
-                    // Set our navigation extras object
-                    // that passes on our global query params and fragment
-                    let navigationExtras: NavigationExtras = {
-                        queryParamsHandling: 'preserve',
-                        preserveFragment: true
-                    };
+        //             // Set our navigation extras object
+        //             // that passes on our global query params and fragment
+        //             let navigationExtras: NavigationExtras = {
+        //                 queryParamsHandling: 'preserve',
+        //                 preserveFragment: true
+        //             };
 
-                    // Redirect the user
-                    this.$router.navigate([redirect], navigationExtras);
-                }, function (error) {
-                    XI.showMsg("get profile error");
-                    return;
-                });
+        //             // Redirect the user
+        //             this.$router.navigate([redirect], navigationExtras);
+        //         }, function (error) {
+        //             XI.showMsg("get profile error");
+        //             return;
+        //         });
 
-            }
-        }, _err => { });
+        //     }
+        // }, _err => { });
     }
 
 
