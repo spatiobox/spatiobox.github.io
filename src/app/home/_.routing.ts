@@ -16,7 +16,8 @@ const routes: Routes = [
             { path: '', component: HomeComponent },
             { path: 'infos', loadChildren: 'app/home/infos/_.module#InfosModule' },
             { path: 'downloads', loadChildren: 'app/home/downloads/_.module#DownloadsModule' },
-            { path: 'waterfalls', loadChildren: 'app/home/waterfalls/_.module#WaterfallsModule' }
+            { path: 'waterfalls', loadChildren: 'app/home/waterfalls/_.module#WaterfallsModule' },
+            { path: 'lottery', loadChildren: 'app/home/lottery/_.module#LotteryModule' },
         ]
     },
 ];

@@ -1,0 +1,70 @@
+@charset "UTF-8";
+.lottery-disc-box {
+    width: 14rem;
+    height: 14rem;
+    position: relative;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.lottery-disc-box .outer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
+
+.lottery-disc-box .outer img {
+    width: 100%;
+}
+
+.lottery-disc-box .inner {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-image: url('/assets/images/lottery/arrow.png');
+    background-size: auto 5rem;
+    background-repeat: no-repeat;
+}
+
+.lottery-disc-box .inner.start:active {
+    -webkit-transform: translate(-50%, -50%) scale(.95);
+    -moz-transform: translate(-50%, -50%) scale(.95);
+    -ms-transform: translate(-50%, -50%) scale(.95);
+    -o-transform: translate(-50%, -50%) scale(.95);
+    transform: translate(-50%, -50%) scale(.95);
+}
+
+.lottery-disc-box .inner.start {
+    background-position: 0 0;
+}
+
+.lottery-disc-box .inner.no-start {
+    background-position: -5rem 0;
+}
+
+.lottery-disc-box .inner.completed {
+    background-position: -10rem 0;
+}
