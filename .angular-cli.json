@@ -22,7 +22,7 @@
         "../node_modules/@angular/material/prebuilt-themes/purple-green.css",
         "_variables.scss",
         "styles.scss",
-        "app/home/style.scss",
+        "app/home/_styles/style.1.scss",
         "app/auth/style.scss"
       ],
       "scripts": [],
